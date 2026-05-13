@@ -1,25 +1,27 @@
 # ArchitectUI Bootstrap 5 jQuery/HTML Theme FREE
 ## Made with love by DashboardPack.com
 
-[![npm version](https://img.shields.io/badge/version-4.5.0-blue.svg)](https://github.com/DashboardPack/architectui-html-theme-free)
+[![npm version](https://img.shields.io/badge/version-4.6.0-blue.svg)](https://github.com/DashboardPack/architectui-html-theme-free)
 [![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](package.json)
 [![Security](https://img.shields.io/badge/security-0%20vulnerabilities-brightgreen.svg)](package.json)
 [![SASS](https://img.shields.io/badge/SASS-modernized-purple.svg)](src/assets/)
 
 ArchitectUI is a **Modern Clean Responsive HTML Bootstrap 5 Admin UI Dashboard Template**. It is used by thousands of developers to build SaaS and various other admin panels for web apps. This version hosted on Github is for preview only. It has a limited functionality in comparison to [Pro version](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/?utm_source=github&utm_medium=readme&utm_campaign=architectui-html-upgrade&utm_content=intro-link) yet it comes with unlimited color schemes and flexibility unmatched to most other Premium admin dashboards.
 
-## What's New in v4.5.0
+## What's New in v4.6.0
 
-### **🚀 jQuery 4.0 Upgrade (January 2026)**
-- **jQuery 4.0.0** - First major jQuery release in over a decade with modernized internals
+### **📦 Full Dependency Refresh (May 2026)**
+- **Every package on latest** - Both runtime and build toolchain updated to the most recent versions on npm
+- **Major bumps** - `copy-webpack-plugin` 14, `css-minimizer-webpack-plugin` 8, `eslint` 10, `eslint-webpack-plugin` 6, `webpack-cli` 7
+- **Webpack 5.106** - Latest core bundler with newest perf improvements
+- **Sass 1.99** - Latest compiler
+- **Zero vulnerabilities** - Clean `npm audit` after full refresh
+- **Verified build** - All 26 demo pages emit cleanly with the upgraded toolchain
+
+### **Previous Release: v4.5.0**
+- **jQuery 4.0.0** - First major jQuery release in over a decade
 - **MetisMenu 3.1.0** - Updated sidebar menu library with jQuery 4.0 support
-- **All Dependencies Updated** - Every package updated to latest January 2026 versions
-- **Zero Vulnerabilities** - Complete security audit passed
-
-### **Previous Release: v4.4.0**
-- **Real Google Maps** - Interactive maps with no API key required
-- **FontAwesome 7** - Latest icon library with full compatibility
-- **Bootstrap 5.3.8** - Latest Bootstrap patches
+- **All Dependencies Updated** - January 2026 refresh across the stack
 
 See [CHANGELOG.md](Changelog.md) for complete details.
 
@@ -91,9 +93,9 @@ This created another folder in the root of your project named build. You'll have
 - **Bootstrap 5.3.8** - Latest version with all features
 - **jQuery 4.0.0** - Major modernization release
 - **Chart.js 4.5.1** - Beautiful data visualizations
-- **FontAwesome 7.1.0** - Latest icon library version
-- **SASS 1.97.3** - Modern CSS preprocessing
-- **Webpack 5.104.1** - Latest build tooling
+- **FontAwesome 7.2.0** - Latest icon library version
+- **SASS 1.99.0** - Modern CSS preprocessing
+- **Webpack 5.106.2** - Latest build tooling
 
 ### **Components & Features**
 - ✅ **Responsive Design** - Mobile-first approach
@@ -137,6 +139,7 @@ This version includes breaking improvements. For existing projects:
 4. **Test your maps** - new implementation may require updates
 
 ## **Version History**
+- **v4.6.0** (2026-05-13) - Full dependency refresh, latest webpack/eslint/sass toolchain
 - **v4.5.0** (2026-01-29) - jQuery 4.0 upgrade, all dependencies updated
 - **v4.4.0** (2025-11-17) - Real Google Maps integration, improved UX
 - **v4.3.0** (2025-09-17) - FontAwesome 7 upgrade, complete dependency refresh

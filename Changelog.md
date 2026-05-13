@@ -2,6 +2,51 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.6.0] - 2026-05-13
+
+### 📦 Dependency Refresh (All Latest Versions)
+
+Comprehensive update of the entire toolchain to the very latest releases on npm. Build verified, zero vulnerabilities.
+
+#### Production Dependencies
+
+- **@fortawesome/fontawesome-free**: 7.1.0 → 7.2.0
+- **@fullcalendar/core**: 6.1.19 → 6.1.20
+- **@fullcalendar/daygrid**: 6.1.19 → 6.1.20
+- **@fullcalendar/interaction**: 6.1.19 → 6.1.20
+- **@fullcalendar/list**: 6.1.19 → 6.1.20
+- **@fullcalendar/timegrid**: 6.1.19 → 6.1.20
+
+#### Development Dependencies (Major Version Bumps)
+
+- **copy-webpack-plugin**: 13 → 14
+- **css-minimizer-webpack-plugin**: 7 → 8
+- **eslint**: 9 → 10
+- **eslint-webpack-plugin**: 5 → 6
+- **webpack-cli**: 6 → 7
+
+#### Development Dependencies (Minor/Patch)
+
+- **@babel/core**: 7.28.6 → 7.29.0
+- **@babel/preset-env**: 7.28.6 → 7.29.5
+- **babel-loader**: 10.0.0 → 10.1.1
+- **css-loader**: 7.1.3 → 7.1.4
+- **handlebars**: 4.7.8 → 4.7.9
+- **html-webpack-plugin**: 5.6.6 → 5.6.7
+- **mini-css-extract-plugin**: 2.10.0 → 2.10.2
+- **sass**: 1.97.3 → 1.99.0
+- **sass-loader**: 16.0.6 → 16.0.8
+- **webpack**: 5.104.1 → 5.106.2
+- **webpack-dev-server**: 5.2.3 → 5.2.4
+
+### 🔒 Security
+- **Zero vulnerabilities** — full `npm audit` clean after refresh
+- Regenerated `package-lock.json` against the latest registry metadata
+
+### ✅ Verification
+- Production build (`npm run build`) passes — all 26 HTML pages, 7 JS entry chunks, and CSS bundle emit cleanly
+- Webpack 5.106.2 compiled with only the pre-existing asset-size hints (unchanged from v4.5.0)
+
 ## [4.5.0] - 2026-01-29
 
 ### 🚀 Major Upgrade: jQuery 4.0
