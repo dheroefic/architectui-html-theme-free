@@ -2,6 +2,49 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.7.0] - 2026-06-19
+
+### 📦 Dependency Refresh (All Latest Versions)
+
+Another full sweep of the toolchain to the very latest releases on npm. Production build verified clean.
+
+#### Production Dependencies
+
+- **@fullcalendar/core**: 6.1.20 → 6.1.21
+- **@fullcalendar/daygrid**: 6.1.20 → 6.1.21
+- **@fullcalendar/interaction**: 6.1.20 → 6.1.21
+- **@fullcalendar/list**: 6.1.20 → 6.1.21
+- **@fullcalendar/timegrid**: 6.1.20 → 6.1.21
+- **@googlemaps/js-api-loader**: 2.0.2 → 2.1.1
+
+#### Development Dependencies (Major Version Bumps)
+
+- **@babel/core**: 7.29.0 → 8.0.1
+- **@babel/preset-env**: 7.29.5 → 8.0.2
+- **sass-loader**: 16.0.8 → 17.0.0
+
+#### Development Dependencies (Minor/Patch)
+
+- **eslint**: 10.3.0 → 10.5.0
+- **sass**: 1.99.0 → 1.101.0
+- **webpack**: 5.106.2 → 5.107.2
+- **webpack-cli**: 7.0.2 → 7.0.3
+- **webpack-dev-server**: 5.2.4 → 5.2.5
+
+### 🔧 Build Config
+
+- **Babel 8 compatibility** — removed the now-defunct `bugfixes` option from `.babelrc`. Bugfix plugins are always enabled in Babel 8, and leaving the flag in place caused the build to fail.
+
+### 🔒 Security
+
+- `npm audit fix` applied for all non-breaking advisories
+- 5 moderate advisories remain, all confined to the `webpack-dev-server` dependency chain (dev-only, never shipped in the production bundle). The only available "fix" is a major downgrade to `webpack-dev-server@1.x`, which would be a significant regression, so it was intentionally not applied.
+
+### ✅ Verification
+
+- Production build (`npm run build`) passes — all demo pages, JS entry chunks, and CSS bundle emit cleanly
+- Webpack 5.107.2 compiled with only the pre-existing asset-size hints (unchanged from v4.6.0)
+
 ## [4.6.0] - 2026-05-13
 
 ### 📦 Dependency Refresh (All Latest Versions)

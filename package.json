@@ -1,6 +1,6 @@
 {
   "name": "architectui-html-free",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "description": "ArchitectUI - Free Bootstrap 5 Admin Dashboard Template",
   "author": "DashboardPack.com",
   "homepage": "https://dashboardpack.com",
@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
-    "@fullcalendar/core": "^6.1.20",
-    "@fullcalendar/daygrid": "^6.1.20",
-    "@fullcalendar/interaction": "^6.1.20",
-    "@fullcalendar/list": "^6.1.20",
-    "@fullcalendar/timegrid": "^6.1.20",
-    "@googlemaps/js-api-loader": "^2.0.2",
+    "@fullcalendar/core": "^6.1.21",
+    "@fullcalendar/daygrid": "^6.1.21",
+    "@fullcalendar/interaction": "^6.1.21",
+    "@fullcalendar/list": "^6.1.21",
+    "@fullcalendar/timegrid": "^6.1.21",
+    "@googlemaps/js-api-loader": "^2.1.1",
     "@kurkle/color": "^0.4.0",
     "@popperjs/core": "^2.11.8",
     "animate.css": "^4.1.1",
@@ -38,15 +38,15 @@
     "**/event-stream": "^4.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.5",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
     "animate-sass": "^0.8.2",
     "babel-loader": "^10.1.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^14.0.0",
     "css-loader": "^7.1.4",
     "css-minimizer-webpack-plugin": "^8.0.0",
-    "eslint": "^10.3.0",
+    "eslint": "^10.5.0",
     "eslint-webpack-plugin": "^6.0.0",
     "expose-loader": "^5.0.1",
     "file-loader": "^6.2.0",
@@ -54,11 +54,11 @@
     "handlebars-loader": "^1.7.3",
     "html-webpack-plugin": "^5.6.7",
     "mini-css-extract-plugin": "^2.10.2",
-    "sass": "^1.99.0",
-    "sass-loader": "^16.0.8",
+    "sass": "^1.101.0",
+    "sass-loader": "^17.0.0",
     "style-loader": "^4.0.0",
-    "webpack": "^5.106.2",
-    "webpack-cli": "^7.0.2",
-    "webpack-dev-server": "^5.2.4"
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3",
+    "webpack-dev-server": "^5.2.5"
   }
 }
