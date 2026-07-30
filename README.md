@@ -54,7 +54,7 @@ See [CHANGELOG.md](Changelog.md) for complete details.
 
 ## Preview
 
-![ArchitectUI Bootstrap 5 Free](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-html-free.jpg)
+![ArchitectUI Bootstrap 5 Free](.github/preview.webp)
 
 ## 🚀 Quick Start
 
