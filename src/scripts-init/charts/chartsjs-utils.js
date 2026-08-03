@@ -1,6 +1,10 @@
 "use strict";
 
-window.chartColors = {
+// Exported so consumers can `import { chartColors }` rather than relying on a
+// side-effect-only import. webpack >= 5.109.0 drops bare `import "./file"` when
+// the module's only effect is writing to a global, which silently broke the
+// chart demos. Importing a real binding keeps the module in the graph.
+export const chartColors = {
   red: "#dc3545",
   orange: "#fd7e14",
   yellow: "#ffc107",
@@ -10,6 +14,11 @@ window.chartColors = {
   grey: "#6c757d",
 };
 
+// Kept for backwards compatibility with any custom code reading the global.
+window.chartColors = chartColors;
+
+// `window` rather than `this`: this file is now an ES module, where top-level
+// `this` is undefined.
 (function (global) {
   var Months = [
     "January",
@@ -158,4 +167,4 @@ window.chartColors = {
     ga("send", "pageview");
   }
   /* eslint-enable */
-})(this);
+})(window);

@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 import colorLib from '@kurkle/color';
-import "./chartsjs-utils";
+import { chartColors } from "./chartsjs-utils";
 
 // Store chart instances for cleanup during HMR
 const chartInstances = {};
@@ -49,11 +49,11 @@ const pieChartData = {
         randomScalingFactor(),
       ],
       backgroundColor: [
-        window.chartColors.red,
-        window.chartColors.orange,
-        window.chartColors.yellow,
-        window.chartColors.green,
-        window.chartColors.blue,
+        chartColors.red,
+        chartColors.orange,
+        chartColors.yellow,
+        chartColors.green,
+        chartColors.blue,
       ],
       label: "Dataset 1",
     },
@@ -83,9 +83,9 @@ const radarChartData = {
   datasets: [
     {
       label: "My First dataset",
-      backgroundColor: colorLib(window.chartColors.red).alpha(0.2).rgbString(),
-      borderColor: window.chartColors.red,
-      pointBackgroundColor: window.chartColors.red,
+      backgroundColor: colorLib(chartColors.red).alpha(0.2).rgbString(),
+      borderColor: chartColors.red,
+      pointBackgroundColor: chartColors.red,
       data: [
         randomScalingFactor(),
         randomScalingFactor(),
@@ -98,9 +98,9 @@ const radarChartData = {
     },
     {
       label: "My Second dataset",
-      backgroundColor: colorLib(window.chartColors.blue).alpha(0.2).rgbString(),
-      borderColor: window.chartColors.blue,
-      pointBackgroundColor: window.chartColors.blue,
+      backgroundColor: colorLib(chartColors.blue).alpha(0.2).rgbString(),
+      borderColor: chartColors.blue,
+      pointBackgroundColor: chartColors.blue,
       data: [
         randomScalingFactor(),
         randomScalingFactor(),
@@ -127,11 +127,11 @@ const polarAreaChartData = {
         randomScalingFactor(),
       ],
       backgroundColor: [
-        window.chartColors.red,
-        window.chartColors.green,
-        window.chartColors.yellow,
-        window.chartColors.grey,
-        window.chartColors.blue,
+        chartColors.red,
+        chartColors.green,
+        chartColors.yellow,
+        chartColors.grey,
+        chartColors.blue,
       ],
       label: "Dataset 1",
     },
@@ -144,7 +144,7 @@ const verticleBarChartData = {
   datasets: [
     {
       label: "Dataset 1",
-      backgroundColor: window.chartColors.red,
+      backgroundColor: chartColors.red,
       data: [
         randomScalingFactor(),
         randomScalingFactor(),
@@ -157,7 +157,7 @@ const verticleBarChartData = {
     },
     {
       label: "Dataset 2",
-      backgroundColor: window.chartColors.blue,
+      backgroundColor: chartColors.blue,
       data: [
         randomScalingFactor(),
         randomScalingFactor(),
@@ -170,7 +170,7 @@ const verticleBarChartData = {
     },
     {
       label: "Dataset 3",
-      backgroundColor: window.chartColors.green,
+      backgroundColor: chartColors.green,
       data: [
         randomScalingFactor(),
         randomScalingFactor(),
@@ -190,8 +190,8 @@ const horizontalBarChartData = {
   datasets: [
     {
       label: "Dataset 1",
-      backgroundColor: colorLib(window.chartColors.red).alpha(0.5).rgbString(),
-      borderColor: window.chartColors.red,
+      backgroundColor: colorLib(chartColors.red).alpha(0.5).rgbString(),
+      borderColor: chartColors.red,
       borderWidth: 1,
       data: [
         randomScalingFactor(),
@@ -205,8 +205,8 @@ const horizontalBarChartData = {
     },
     {
       label: "Dataset 2",
-      backgroundColor: colorLib(window.chartColors.blue).alpha(0.5).rgbString(),
-      borderColor: window.chartColors.blue,
+      backgroundColor: colorLib(chartColors.blue).alpha(0.5).rgbString(),
+      borderColor: chartColors.blue,
       data: [
         randomScalingFactor(),
         randomScalingFactor(),
@@ -229,7 +229,7 @@ const lineChartData = {
   datasets: [
     {
       label: "Dataset 1",
-      borderColor: window.chartColors.red,
+      borderColor: chartColors.red,
       borderWidth: 2,
       tension: 0.4,
       fill: false,
@@ -238,7 +238,7 @@ const lineChartData = {
     },
     {
       label: "Dataset 2",
-      borderColor: window.chartColors.blue,
+      borderColor: chartColors.blue,
       borderWidth: 2,
       tension: 0.4,
       fill: false,
@@ -254,7 +254,7 @@ const lineChartData2 = {
   datasets: [
     {
       label: "Bandwidth In",
-      borderColor: window.chartColors.green,
+      borderColor: chartColors.green,
       borderWidth: 2,
       tension: 0.4,
       fill: false,
@@ -263,7 +263,7 @@ const lineChartData2 = {
     },
     {
       label: "Bandwidth Out",
-      borderColor: window.chartColors.orange,
+      borderColor: chartColors.orange,
       borderWidth: 2,
       tension: 0.4,
       fill: false,

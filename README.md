@@ -1,26 +1,37 @@
 # ArchitectUI Bootstrap 5 jQuery/HTML Theme FREE
 ## Made with love by DashboardPack.com
 
-[![npm version](https://img.shields.io/badge/version-4.7.0-blue.svg)](https://github.com/DashboardPack/architectui-html-theme-free)
+[![npm version](https://img.shields.io/badge/version-4.8.0-blue.svg)](https://github.com/DashboardPack/architectui-html-theme-free)
 [![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](package.json)
 [![Security](https://img.shields.io/badge/runtime%20security-0%20vulnerabilities-brightgreen.svg)](package.json)
 [![SASS](https://img.shields.io/badge/SASS-modernized-purple.svg)](src/assets/)
 
 ArchitectUI is a **Modern Clean Responsive HTML Bootstrap 5 Admin UI Dashboard Template**. It is used by thousands of developers to build SaaS and various other admin panels for web apps. This version hosted on Github is for preview only. It has a limited functionality in comparison to [Pro version](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/?utm_source=github&utm_medium=readme&utm_campaign=architectui-html-upgrade&utm_content=intro-link) yet it comes with unlimited color schemes and flexibility unmatched to most other Premium admin dashboards.
 
-## What's New in v4.7.0
+## What's New in v4.8.0
 
-### **📦 Full Dependency Refresh (June 2026)**
-- **Every package on latest** - Both runtime and build toolchain updated to the most recent versions on npm
+### **🔒 Security Patch (August 2026)**
+- **PostCSS path traversal fixed** — [GHSA-r28c-9q8g-f849](https://github.com/advisories/GHSA-r28c-9q8g-f849) (High). PostCSS ≤ 8.5.17 could disclose arbitrary `.map` files via `sourceMappingURL` auto-loading; now on **8.5.25**
+- **16 vulnerabilities → 0** — including 2 critical (`shell-quote`, `websocket-driver`) and 6 high
+- **Security floors pinned** via `overrides` so fresh installs can't regress
+
+### **🐛 Two Real Bugs Fixed**
+- **Chart.js demos would have rendered blank canvases on webpack ≥ 5.109.0** — the bundler strips side-effect-only imports, dropping the `chartColors` palette. Now imported as a proper binding. (Bisected: 5.108.4 fine, 5.109.0 first bad — v4.7.0 shipped 5.107.2 and was **not** affected)
+- **Dev server wouldn't start on webpack-dev-server 6** — `watchFiles` globs now pass an explicit `cwd` (WDS 6 forwards `cwd: undefined` into tinyglobby and throws)
+
+### **📦 Dependency Refresh**
+- **webpack-dev-server 6** major upgrade
+- **Webpack 5.109**, **Sass 1.102**, **ESLint 10.8**, **FontAwesome 7.3.1**
+- **Verified** — all 26 demo pages load in headless Chromium with zero console errors
+
+> **Requires Node.js 22.15+** (webpack-dev-server 6 and sass-loader 17).
+
+### **Previous Release: v4.7.0 (June 2026)**
 - **Major bumps** - `@babel/core` 8, `@babel/preset-env` 8, `sass-loader` 17
-- **Webpack 5.107** - Latest core bundler
-- **Sass 1.101** - Latest compiler
 - **Babel 8 ready** - `.babelrc` updated for the new major (removed the retired `bugfixes` flag)
-- **Verified build** - All demo pages emit cleanly with the upgraded toolchain
 
-### **Previous Release: v4.6.0**
-- **Full dependency refresh** - Latest webpack/eslint/sass toolchain (May 2026)
-- **Major bumps** - `copy-webpack-plugin` 14, `css-minimizer-webpack-plugin` 8, `eslint` 10, `webpack-cli` 7
+### **Earlier Release: v4.6.0**
+- **Full dependency refresh** - `copy-webpack-plugin` 14, `css-minimizer-webpack-plugin` 8, `eslint` 10, `webpack-cli` 7 (May 2026)
 
 See [CHANGELOG.md](Changelog.md) for complete details.
 
@@ -92,9 +103,9 @@ This created another folder in the root of your project named build. You'll have
 - **Bootstrap 5.3.8** - Latest version with all features
 - **jQuery 4.0.0** - Major modernization release
 - **Chart.js 4.5.1** - Beautiful data visualizations
-- **FontAwesome 7.2.0** - Latest icon library version
-- **SASS 1.101.0** - Modern CSS preprocessing
-- **Webpack 5.107.2** - Latest build tooling
+- **FontAwesome 7.3.1** - Latest icon library version
+- **SASS 1.102.0** - Modern CSS preprocessing
+- **Webpack 5.109.2** - Latest build tooling
 
 ### **Components & Features**
 - ✅ **Responsive Design** - Mobile-first approach
@@ -138,6 +149,7 @@ This version includes breaking improvements. For existing projects:
 4. **Test your maps** - new implementation may require updates
 
 ## **Version History**
+- **v4.8.0** (2026-08-03) - PostCSS security patch, webpack-dev-server 6, chart + dev-server bug fixes
 - **v4.7.0** (2026-06-19) - Full dependency refresh, Babel 8 + sass-loader 17, latest webpack/eslint/sass toolchain
 - **v4.6.0** (2026-05-13) - Full dependency refresh, latest webpack/eslint/sass toolchain
 - **v4.5.0** (2026-01-29) - jQuery 4.0 upgrade, all dependencies updated

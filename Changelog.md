@@ -2,6 +2,59 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.8.0] - 2026-08-03
+
+### 🔒 Security
+
+Resolves the **PostCSS path traversal advisory** ([GHSA-r28c-9q8g-f849](https://github.com/advisories/GHSA-r28c-9q8g-f849), High) reported by Dependabot, plus every other outstanding advisory in the dependency tree. `npm audit` went from **16 vulnerabilities (2 critical, 6 high, 6 moderate, 2 low) to 0**.
+
+- **postcss**: 8.5.14 → **8.5.25** — path traversal in previous-source-map auto-loading (`sourceMappingURL`) allowed arbitrary `.map` file disclosure. Reached transitively through `css-minimizer-webpack-plugin` → `cssnano`.
+- **shell-quote** (critical), **websocket-driver** (critical), **brace-expansion**, **fast-uri**, **immutable**, **svgo**, **ws** (high), **http-proxy-middleware**, **launch-editor**, **qs**, **uuid**, **sockjs**, **webpack-dev-server** (moderate), **@babel/core**, **body-parser** (low) — all resolved.
+
+An `overrides` block now pins security floors for `postcss`, `fast-uri`, `immutable`, `svgo` and `ws` so a fresh `npm install` cannot silently resolve back to a vulnerable release.
+
+### 🐛 Fixed
+
+- **Chart.js demo page would have rendered blank canvases on webpack ≥ 5.109.0.** From 5.109.0 the bundler eliminates side-effect-only imports (`import "./chartsjs-utils"`) when the module's only effect is writing to a global. That dropped `window.chartColors` from the production bundle, so every Chart.js canvas threw `Cannot read properties of undefined (reading 'red')` and drew nothing. `chartsjs-utils.js` now exports `chartColors` as a real binding and `chartjs.js` imports it; the global assignment is retained for backwards compatibility.
+  - Bisected precisely: **5.108.4 is unaffected, 5.109.0 is the first bad version.** v4.7.0 shipped webpack 5.107.2 and was therefore **not** affected — this fix lands alongside the bump to 5.109.2.
+- **Dev server failed to start on webpack-dev-server 6.** WDS 6 forwards `cwd: undefined` into `tinyglobby`, which overwrites its `process.cwd()` default and throws `ERR_INVALID_ARG_TYPE`. `watchFiles` now uses the object form with an explicit `cwd`.
+- **Dead dev-server paths.** `static.directory` and `watchFiles` pointed at a `public/` folder that does not exist in this template. They now point at the real asset and template sources, so editing a `.hbs` file triggers a reload.
+- Removed the manual `HotModuleReplacementPlugin`; `devServer.hot: true` applies it automatically and WDS 6 warns when it is added twice.
+- Dropped the `resolutions` field — it is Yarn-only syntax that npm ignores, and `event-stream` is no longer in the dependency tree.
+
+### 📦 Dependency Refresh
+
+#### Production Dependencies
+
+- **@fortawesome/fontawesome-free**: 7.2.0 → 7.3.1
+
+#### Development Dependencies (Major Version Bump)
+
+- **webpack-dev-server**: 5.2.5 → **6.0.0**
+
+#### Development Dependencies (Minor/Patch)
+
+- **eslint**: 10.5.0 → 10.8.0
+- **html-webpack-plugin**: 5.6.7 → 5.6.8
+- **sass**: 1.101.0 → 1.102.0
+- **webpack**: 5.107.2 → 5.109.2
+- **webpack-cli**: 7.0.3 → 7.2.2
+
+#### Held Back (Deliberately)
+
+- **@fullcalendar/core 7.x** — v7 is a re-architecture built on `@full-ui/headless-calendar`, and the `daygrid`/`timegrid`/`list`/`interaction` plugins this template uses are still published at 6.1.21. Core stays on the 6.x line so the plugin set matches.
+
+### ⚙️ Requirements
+
+`engines.node` is now **>= 22.15.0**, required by webpack-dev-server 6 (>= 22.15.0) and sass-loader 17 (>= 22.11.0).
+
+### ✅ Verification
+
+- Production build emits all 26 demo pages with zero errors
+- All 26 pages loaded in headless Chromium — **zero console or page errors**
+- Dev server starts and serves HTML, JS and assets (HTTP 200)
+- `npm audit`: **0 vulnerabilities**
+
 ## [4.7.0] - 2026-06-19
 
 ### 📦 Dependency Refresh (All Latest Versions)

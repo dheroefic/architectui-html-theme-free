@@ -135,10 +135,7 @@ module.exports = (env) => {
         });
 
     } else {
-        webpackConfig.plugins.push(
-            new webpack.HotModuleReplacementPlugin()
-        );
-
+        // HMR plugin is applied automatically by webpack-dev-server via `hot: true`.
         webpackConfig.module.rules.push({
             test: /\.scss$/i,
             use: ['style-loader', 'css-loader',
@@ -159,9 +156,18 @@ module.exports = (env) => {
             historyApiFallback: true,
             hot: true,
             static: {
-                directory: Path.join(__dirname, 'public'),
+                directory: Path.join(__dirname, 'src', 'assets'),
+                publicPath: '/assets',
             },
-            watchFiles: ['public/**/*.*'],
+            // webpack-dev-server 6 forwards `cwd: undefined` into tinyglobby,
+            // which overwrites its process.cwd() default and throws. Passing an
+            // explicit cwd via the object form keeps glob watching working.
+            watchFiles: [
+                {
+                    paths: ['src/**/*.hbs'],
+                    options: { cwd: __dirname },
+                },
+            ],
             open: {
                 target: ['http://localhost:8080'],
                 app: {
